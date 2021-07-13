@@ -13,6 +13,7 @@
 		B546AA0D269DA10800494821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B546AA0C269DA10800494821 /* Assets.xcassets */; };
 		B546AA10269DA10800494821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B546AA0E269DA10800494821 /* LaunchScreen.storyboard */; };
 		B546AA1B269DA1B700494821 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546AA1A269DA1B700494821 /* LoginViewController.swift */; };
+		B546AA20269DCE5A00494821 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546AA1F269DCE5A00494821 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B546AA0F269DA10800494821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B546AA11269DA10800494821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B546AA1A269DA1B700494821 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B546AA1F269DCE5A00494821 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				B546AA03269DA10700494821 /* AppDelegate.swift */,
 				B546AA05269DA10700494821 /* SceneDelegate.swift */,
 				B546AA1A269DA1B700494821 /* LoginViewController.swift */,
+				B546AA1F269DCE5A00494821 /* WelcomeViewController.swift */,
 				B546AA09269DA10700494821 /* Main.storyboard */,
 				B546AA0C269DA10800494821 /* Assets.xcassets */,
 				B546AA0E269DA10800494821 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B546AA1B269DA1B700494821 /* LoginViewController.swift in Sources */,
+				B546AA20269DCE5A00494821 /* WelcomeViewController.swift in Sources */,
 				B546AA04269DA10700494821 /* AppDelegate.swift in Sources */,
 				B546AA06269DA10700494821 /* SceneDelegate.swift in Sources */,
 			);
