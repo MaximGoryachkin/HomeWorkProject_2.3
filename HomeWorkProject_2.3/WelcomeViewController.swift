@@ -8,16 +8,31 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
+    
+    // MARK: IB Outlets
 
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var outButton: UIButton!
+    
+    // MARK: Public properties
     
     var label: String?
-    let loginViewController = LoginViewController()
+    
+    // MARK: Override methods
+    
+    override func viewWillLayoutSubviews() {
+        welcomeLabel.font = welcomeLabel.font.withSize(view.frame.width / 10)
+        outButton.titleLabel?.font = outButton.titleLabel?.font.withSize(view.frame.width / 15)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = label
+        
+        guard let label = self.label else { return }
+        welcomeLabel.text = "Welcome, \(label)!"
     }
+    
+    //MARK: IB Actions
 
     @IBAction func logOutAction() {
         dismiss(animated: true)
