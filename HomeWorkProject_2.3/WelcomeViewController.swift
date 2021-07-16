@@ -28,13 +28,8 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let label = self.label else { return }
+        guard let label = label else { return }
         welcomeLabel.text = "Welcome, \(label)!"
     }
-    
-    //MARK: IB Actions
 
-    @IBAction func logOutAction() {
-        dismiss(animated: true)
-    }
 }

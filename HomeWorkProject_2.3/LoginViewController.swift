@@ -44,7 +44,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        super.touchesBegan(touches,with: event)
+        view.endEditing(true)
     }
     
     // MARK: IB Actions
@@ -53,21 +54,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if loginTextField.text == login && passwordTextField.text == password {
             performSegue(withIdentifier: "segue", sender: nil)
         } else {
-            showAlert(title: "Alarm!", massage: "Enter correct User Name or Password")
+            showAlert(title: "Alarm!",
+                      massage: "Enter correct User Name or Password",
+                      textField: passwordTextField)
         }
     }
     
     @IBAction func loginAlert() {
-        showAlert(title: "Reminder!", massage: "Your user name is \(login)")
+        showAlert(title: "Reminder!",
+                  massage: "Your user name is \(login)",
+                  textField: passwordTextField)
     }
     
     @IBAction func passwordAlert() {
-        showAlert(title: "Reminder!", massage: "Your password is \(password)")
+        showAlert(title: "Reminder!",
+                  massage: "Your password is \(password)",
+                  textField: passwordTextField)
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        guard let _ =
-                segue.source as? WelcomeViewController else { return }
         loginTextField.text = ""
         passwordTextField.text = ""
     }
@@ -76,10 +81,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == loginTextField {
-            textField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
         } else {
-            textField.resignFirstResponder()
             joinAction()
         }
         return true
@@ -90,18 +93,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 // MARK: Extensions
 
 extension LoginViewController {
-    private func showAlert(title: String, massage: String) {
+    private func showAlert(title: String, massage: String, textField: UITextField?) {
         let alert = UIAlertController(title: title,
                                       message: massage,
                                       preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK",
-                                        style: .cancel)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+            textField?.text = ""
+        }
         
         alert.addAction(alertAction)
         
         present(alert, animated: true)
-        
-        passwordTextField.text = ""
     }
 }
 
